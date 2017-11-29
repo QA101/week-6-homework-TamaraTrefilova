@@ -13,13 +13,15 @@ public class IOCalculator {
 	PrintWriter pw;
 	
 	public static void main(String[] args)  {
+//		for(String s:args) {
+//			System.out.println("Arg:"+s);
+//		}
 		IOCalculator ui;
 		try {
 			ui = new IOCalculator(args);
 			ui.ReadInput();
 			ui.writer.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}	
 	}
@@ -27,7 +29,7 @@ public class IOCalculator {
 	/**
 	 * Constructor to build the user interface based on the arguments passed in from the command line.
 	 * 
-	 * If NULL, will use the console for writting to and from the console
+	 * If NULL, will use the console for writing to and from the console
 	 * args[0] - input file
 	 * args[1] - output file
 	 * args[2] - Boolean on when to append to the output file
@@ -115,11 +117,11 @@ public class IOCalculator {
 				 * There is a bug here!!!! Lose of data caused by using ints.
 				 * Found the bug by doing unit testing 
 				 */
-				return first / second;
+				return (double)(first )/ second;
 			case "-":
-				return first - second;
+				return  first - second;
 			case "*":
-				return first * second;
+				return   first * second;
 			default:
 				throw new Exception();
 		}
